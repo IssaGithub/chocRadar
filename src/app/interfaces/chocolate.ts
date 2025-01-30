@@ -6,4 +6,7 @@ export interface chocolate{
     brand:string;
     currency:string;
     prices:prices[];
+    link?:string;
+    pricePer100g?:number;
+    cheapestPricePer100g?:number;
 }
