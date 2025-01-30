@@ -1,8 +1,8 @@
-import { Component, effect, OnInit, signal, Signal } from '@angular/core';
-import { ListComponent } from "../../components/list/list.component";
+import { Component, OnInit } from '@angular/core';
 import { chocolate } from '../../interfaces/chocolate';
 import { ChocolateService } from '../../services/chocolate.service';
 import { transformProductData } from '../../utility/chocolate-helper';
+import { ListComponent } from '../../components/list2/list.component';
 
 @Component({
   selector: 'app-home',
