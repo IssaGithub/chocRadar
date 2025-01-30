@@ -1,0 +1,24 @@
+.preview{
+    .details{
+        display: flex;
+        align-items:flex-start;
+        gap:6px;
+        font-size: 15px;
+        line-height: 19px;
+        color:#717171;
+        width: 100%;
+        .top{
+            display: flex;
+            flex-direction: row;
+            color:#222222;
+            font-weight: 600;
+            flex-grow: 1;
+            gap:5px;
+            
+        }
+        .link{
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+}
