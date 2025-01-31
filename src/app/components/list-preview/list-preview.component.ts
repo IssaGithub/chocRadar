@@ -8,10 +8,8 @@ import { chocolate } from '../../interfaces/chocolate';
   templateUrl: './list-preview.component.html',
   styleUrl: './list-preview.component.scss'
 })
-export class ListPreviewComponent implements OnChanges{
+export class ListPreviewComponent{
 @Input() chocolate:chocolate={} as chocolate;
 
-ngOnChanges(changes: SimpleChanges): void {
-    console.log("Preview changes",changes!)
-  }
+
 }
