@@ -1,8 +1,7 @@
+import { BaseItem } from "./BaseItem";
 import { prices } from "./prices";
 
-export interface chocolate{
-    id:string;
-    name:string;
+export interface chocolate extends BaseItem{
     brand:string;
     currency:string;
     prices:prices[];
