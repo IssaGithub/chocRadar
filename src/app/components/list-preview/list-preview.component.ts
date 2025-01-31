@@ -1,8 +1,9 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { chocolate } from '../../interfaces/chocolate';
 
+
 @Component({
-  selector: 'list-preview',
+  selector: 'choc-list-preview',
   standalone: true,
   imports: [],
   templateUrl: './list-preview.component.html',
