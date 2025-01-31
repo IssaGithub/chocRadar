@@ -10,7 +10,6 @@
     list-style: none;
 
     @include for-narrow-layout {
-        margin: 0px 0 0px 0;
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -18,9 +17,7 @@
         grid-template-columns: repeat(6,1fr);
     }
     @include for-normal-layout {
-        margin: 0px 0 0px 0;
         grid-template-columns: repeat(4, 1fr);
-        gap:1px 1px;
       }
     .preview{
         .details{
@@ -30,10 +27,11 @@
             font-size: 15px;
             line-height: 2px;
             color:#717171;
-            width: 100%;
+            width: 80%;
             .image{
             box-sizing: border-box;
             border-radius: 15%;
+            width: 100%;
             }
             .top{
                 display: flex;
