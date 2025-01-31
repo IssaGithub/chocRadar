@@ -14,7 +14,7 @@ export class ListComponent implements OnChanges{
   @Input() data: any[] = [];
 
   constructor(){
-    console.log("list2 data",this.data)
+    console.log("list data",this.data)
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("changes",changes!)
