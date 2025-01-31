@@ -5,7 +5,7 @@ import { transformProductData } from '../../utility/chocolate-helper';
 import { ListComponent } from '../../components/list/list.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'choc-home',
   standalone: true,
   imports: [ListComponent],
   templateUrl: './home.component.html',
