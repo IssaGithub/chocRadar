@@ -1,3 +1,6 @@
+@import '../../assets/mixins';
+@import '../../assets/variables';
+
 .list{
     display:grid;
     grid-template-columns: 1fr;
@@ -7,4 +10,13 @@
     list-style: none;
 
     grid-template-columns: repeat(6,1fr);
+
+    @include for-narrow-layout {
+        margin: 16px 0 40px 0;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-wide-layout {
+        grid-template-columns: repeat(4,1fr);
+    }
 }

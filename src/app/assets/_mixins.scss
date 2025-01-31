@@ -1,0 +1,25 @@
+/* Breakpoint mixins */
+
+@mixin for-desktop-layout {
+    @media (max-width: calc($wide-breakpoint + 40px)){
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (min-width: calc($tablet-breakpoint + 40px)){
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (min-width: calc($normal-brakpoint + 40px)){
+        @content;
+    }
+}
+
+@mixin for-narrow-layout {
+    @media (min-width:calc($tablet-breakpoint +40px)) {
+        
+    }
+}
