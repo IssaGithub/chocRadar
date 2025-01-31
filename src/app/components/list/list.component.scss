@@ -5,18 +5,50 @@
     display:grid;
     grid-template-columns: 1fr;
     width: 100%;
-    gap: 30px 24px;
+    gap:15px 12px;
     margin: 16px 0 70px 0;
     list-style: none;
 
-    grid-template-columns: repeat(6,1fr);
-
     @include for-narrow-layout {
-        margin: 16px 0 40px 0;
+        margin: 0px 0 0px 0;
         grid-template-columns: repeat(2, 1fr);
     }
 
     @include for-wide-layout {
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(6,1fr);
+    }
+    @include for-normal-layout {
+        margin: 0px 0 0px 0;
+        grid-template-columns: repeat(4, 1fr);
+        gap:1px 1px;
+      }
+    .preview{
+        .details{
+            display: flex;
+            flex-direction: column;
+            align-items:flex-start;
+            font-size: 15px;
+            line-height: 2px;
+            color:#717171;
+            width: 100%;
+            .image{
+            box-sizing: border-box;
+            border-radius: 15%;
+            }
+            .top{
+                display: flex;
+                flex-direction: row;
+                color:#222222;
+                font-weight: 600;
+                flex-grow: 1;
+                margin-bottom: 1px;
+                gap:5px;
+                
+            }
+            .left{
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
 }

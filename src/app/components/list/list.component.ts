@@ -1,25 +1,15 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ListPreviewComponent } from '../list-preview/list-preview.component';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseItem } from '../../interfaces/BaseItem';
+import { chocolate } from '../../interfaces/chocolate';
 
 @Component({
   selector: 'choc-list',
   standalone: true,
-  imports: [ListPreviewComponent,CommonModule],
+  imports: [CommonModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
-export class ListComponent implements OnChanges{
+export class ListComponent {
 
-  @Input() data: BaseItem[] = [];
-
-  constructor(){
-    console.log("list data",this.data)
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("changes",changes!)
-  }
-
-
+  @Input() data: chocolate[] = []; 
 }
