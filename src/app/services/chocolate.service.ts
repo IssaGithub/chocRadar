@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 
-import * as chocolateData from '../data/chocolate-data.json'
+import * as chocolateData from '../data/chocolate-data.json';
 import { chocolate } from '../interfaces/chocolate';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ChocolateService {
+  private data = chocolateData.data;
 
-  private data = chocolateData.data ;
+  constructor() {}
 
-  constructor() { }
-
-  getchocolates():chocolate[]{
+  getchocolates(): chocolate[] {
     return this.data;
   }
 }

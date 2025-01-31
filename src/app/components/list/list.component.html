@@ -1,22 +1,27 @@
 <ul class="list">
-    <li *ngFor="let item of data">
-        <section class="preview">
-            <section class="img-carousel">
-               
-                <div class="details">
-                    <img class="image" src="/assets/chocolate.jpeg" alt="chocoate">
-                    <div class="top">
-                        <p>{{item.brand}}</p>
-                        <p>{{item.name}}</p>
-                    </div >
-                    
-                    <div class="left">
-                    <p>{{item.cheapestPricePer100g}}</p>
-                    <p>{{item.pricePer100g}}</p>
-                        <a class=""href="{{item.link}}"  target="_blank" rel="noopener noreferrer">{{item.link}}</a>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </li>
+  <li *ngFor="let item of data">
+    <section class="preview">
+      <section class="img-carousel">
+        <div class="details">
+          <img class="image" src="/assets/chocolate.jpeg" alt="chocoate" />
+          <div class="top">
+            <p>{{ item.brand }}</p>
+            <p>{{ item.name }}</p>
+          </div>
+
+          <div class="left">
+            <p>{{ item.cheapestPricePer100g }}</p>
+            <p>{{ item.pricePer100g }}</p>
+            <a
+              class=""
+              href="{{ item.link }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ item.link }}</a
+            >
+          </div>
+        </div>
+      </section>
+    </section>
+  </li>
 </ul>

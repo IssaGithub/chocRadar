@@ -9,17 +9,14 @@ import { ListComponent } from '../../components/list/list.component';
   standalone: true,
   imports: [ListComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent  implements OnInit{
-  
-  data: chocolate[] =[];
-  colums =['name','brand','cheapestPricePer100g','pricePer100g','link'];
-  
-  constructor(private dataService:ChocolateService){
+export class HomeComponent implements OnInit {
+  data: chocolate[] = [];
+  colums = ['name', 'brand', 'cheapestPricePer100g', 'pricePer100g', 'link'];
 
-  }
+  constructor(private dataService: ChocolateService) {}
   ngOnInit(): void {
-  this.data=  transformProductData(this.dataService.getchocolates());
+    this.data = transformProductData(this.dataService.getchocolates());
   }
 }
