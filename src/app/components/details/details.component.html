@@ -5,8 +5,14 @@
       <table mat-table [dataSource]="prices" class="mat-elevation-z8">
         <ng-container matColumnDef="price">
           <th mat-header-cell *matHeaderCellDef>Preis</th>
-          <td mat-header-cell *matCellDef="let element">{{ element.price }}</td>
+          <td mat-header-cell *matCellDef="let element">{{ element.price }} </td>
+          
         </ng-container>
+        <ng-container matColumnDef="cheapest">
+            <th mat-header-cell *matHeaderCellDef>Günstigster Preis</th>
+            <td mat-header-cell *matCellDef="let element"><img src="/src/assets/cheapest-price.jpg" alt="" width="50" height="50"> </td>
+           
+          </ng-container>
         <ng-container matColumnDef="amount">
           <th mat-header-cell *matHeaderCellDef>Menge</th>
           <td mat-header-cell *matCellDef="let element">
