@@ -1,4 +1,4 @@
-<ng-container class="details-container">
+<div class="details-container">
   <section class="title">
     <h1>{{ product[0].brand }} {{ product[0].name }}</h1>
     <div class="details-table">
@@ -8,16 +8,25 @@
           <td mat-header-cell *matCellDef="let element">{{ element.price }}</td>
         </ng-container>
         <ng-container matColumnDef="amount">
-            <th mat-header-cell *matHeaderCellDef>Menge</th>
-            <td mat-header-cell *matCellDef="let element">{{ element.amount }}</td>
-          </ng-container>
-          <ng-container matColumnDef="link">
-            <th mat-header-cell *matHeaderCellDef>Link</th>
-            <td mat-header-cell *matCellDef="let element">{{ element.link }}</td>
-          </ng-container>
+          <th mat-header-cell *matHeaderCellDef>Menge</th>
+          <td mat-header-cell *matCellDef="let element">
+            {{ element.amount }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="link">
+          <th mat-header-cell *matHeaderCellDef>Link</th>
+          <td mat-header-cell *matCellDef="let element">
+            <a
+              href="{{ element.link }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ element.link }}</a
+            >
+          </td>
+        </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
     </div>
   </section>
-</ng-container>
+</div>
