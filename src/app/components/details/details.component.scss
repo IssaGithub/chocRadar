@@ -1,8 +1,11 @@
 @import '../../assets/variables';
 .details-container{
-    //  padding: 80px 20px;
+    display:grid;
+    grid-template-columns: 1fr;
+    padding-left: 5rem;
+    padding-right: 5rem;
     table {
-        width: 100%;
+        width: 5%;
       }
     .h1{
     font-size:$heading-details-page ;
