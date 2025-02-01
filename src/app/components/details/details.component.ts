@@ -17,7 +17,7 @@ export class DetailsComponent {
   product: chocolate[] = [mockChock];
   prices: prices[] = this.product[0].prices;
   productId?: string | null;
-  displayedColumns: string[] = ['price','amount','link'];
+  displayedColumns: string[] = ['price', 'amount', 'link'];
 
   constructor(
     private route: ActivatedRoute,
