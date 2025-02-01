@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { chocolate } from '../../interfaces/chocolate';
-import { ChocolateService } from '../../services/chocolate.service';
+import { ChocolateService } from '../../services/http/chocolate.service';
 import { transformProductData } from '../../utility/chocolate-helper';
 import { ListComponent } from '../../components/list/list.component';
 
