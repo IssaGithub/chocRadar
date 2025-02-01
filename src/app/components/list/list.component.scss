@@ -4,9 +4,11 @@
 .list{
     display:grid;
     grid-template-columns: 1fr;
-    width: 100%;
+    width: 90%;
     gap:15px 12px;
-    margin: 16px 0 70px 0;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    // margin: 16px 0 70px 0;
     list-style: none;
 
     @include for-narrow-layout {
@@ -17,7 +19,7 @@
         grid-template-columns: repeat(6,1fr);
     }
     @include for-normal-layout {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
       }
     .preview{
         .details{
