@@ -10,7 +10,7 @@ import { cheapestPrice } from '../../utility/chocolate-helper';
 @Component({
   selector: 'choc-details',
   standalone: true,
-  imports: [MatTableModule,CommonModule],
+  imports: [MatTableModule, CommonModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
@@ -19,14 +19,14 @@ export class DetailsComponent {
   product: chocolate[] = [mockChock];
   prices: prices[] = this.product[0].prices;
   productId?: string | null;
-  displayedColumns: string[] = ['price','cheapest', 'amount', 'link'];
+  displayedColumns: string[] = ['price', 'cheapest', 'amount', 'link'];
 
   cheapestPrice = cheapestPrice(this.prices);
   constructor(
     private route: ActivatedRoute,
     private chocolateDataService: ChocolateDataService,
   ) {
-    console.log("cheapestPrice",this.cheapestPrice)
+    console.log('cheapestPrice', this.cheapestPrice);
   }
 
   ngOnnit() {
