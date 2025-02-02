@@ -1,4 +1,4 @@
-@import '../../assets/variables';
+@import '../../assets/styles/variables';
 .details-container{
     display:grid;
     grid-template-columns: 1fr;
@@ -10,4 +10,7 @@
     .h1{
     font-size:$heading-details-page ;
     }
+     .mat-header-cell {
+
+        padding: 0 16px 0 16px  !important   }
 }

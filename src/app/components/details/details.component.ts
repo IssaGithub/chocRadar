@@ -6,6 +6,7 @@ import { mockChock } from '../../data/mock';
 import { MatTableModule } from '@angular/material/table';
 import { prices } from '../../interfaces/prices';
 import { CommonModule } from '@angular/common';
+import { cheapestPrice } from '../../utility/chocolate-helper';
 @Component({
   selector: 'choc-details',
   standalone: true,
@@ -20,10 +21,13 @@ export class DetailsComponent {
   productId?: string | null;
   displayedColumns: string[] = ['price','cheapest', 'amount', 'link'];
 
+  cheapestPrice = cheapestPrice(this.prices);
   constructor(
     private route: ActivatedRoute,
     private chocolateDataService: ChocolateDataService,
-  ) {}
+  ) {
+    console.log("cheapestPrice",this.cheapestPrice)
+  }
 
   ngOnnit() {
     this.route.queryParamMap.subscribe((paramMap) => {
