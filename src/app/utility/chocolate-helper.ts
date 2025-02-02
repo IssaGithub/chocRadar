@@ -1,4 +1,5 @@
 import { chocolate } from '../interfaces/chocolate';
+import { prices } from '../interfaces/prices';
 
 export function transformProductData(chocolate: chocolate[]) {
   return chocolate.map((chocolate) => {
@@ -11,11 +12,8 @@ export function transformProductData(chocolate: chocolate[]) {
       };
     }
 
-    const pricePer100g = chocolate.prices.reduce(
-      (sum, item) => sum + item.price,
-      0,
-    );
-    const cheapestPricePer100g = Math.min(
+    const cheapestPricePer100g = cheapestPrice(chocolate.prices);
+    const  pricePer100g = Math.min(
       ...chocolate.prices.map((price) => (price.price / price.amount) * 100),
     );
     const chepeastLink = chocolate.prices.reduce((min, current) =>
@@ -30,4 +28,8 @@ export function transformProductData(chocolate: chocolate[]) {
       link: chepeastLink.link,
     };
   });
+}
+
+export function cheapestPrice(product:prices[]):number {
+  return Math.min(...product.map(price=>price.price))
 }
