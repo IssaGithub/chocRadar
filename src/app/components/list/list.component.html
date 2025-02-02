@@ -2,7 +2,7 @@
   <li *ngFor="let item of data">
     <section
       class="preview"
-      ((click))="selectItem(item)"
+      (click)="selectItem(item)"
       [routerLink]="['/details']"
     >
       <div class="details">
@@ -12,13 +12,32 @@
           <p>{{ item.name }}</p>
         </div>
 
-        <div class="left">
-          <p>{{ item.cheapestPricePer100g }}&ngsp; €</p>
+        <!-- <div class="left">
+          <p>Günstigster Preis{{ item.cheapestPricePer100g }}&ngsp; €</p>
           <p>{{ item.pricePer100g }}&ngsp; €</p>
           <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{
             item.link
           }}</a>
+        </div> -->
+        <div class="price-container">
+          <p>Durchschnittlicher Preis pro 100g</p>
+          <p class="price">{{ item.pricePer100g }} €</p>
         </div>
+
+        <div class="price-container">
+          <p>
+            Günstigster Preis pro 100g</p> 
+            <p class="price">{{
+              item.cheapestPricePer100g
+            }}&ngsp; €
+          </p>
+        </div>
+        <div style="display: inline">
+          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{
+            item.link
+          }}</a>
+        </div>
+        <br />
       </div>
     </section>
   </li>
