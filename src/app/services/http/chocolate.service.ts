@@ -2,7 +2,6 @@ import { computed, Injectable, signal } from '@angular/core';
 
 import * as chocolateData from '../../data/chocolate-data.json';
 import { products } from '../../interfaces/products';
-import { HttpClient } from '@angular/common/http';
 import { transformProductData } from '../../utility/product-helper';
 
 @Injectable({
@@ -13,6 +12,7 @@ export class ProductService {
 
   private products = signal<products[]>([]);
   private searchQuery = signal<string>('');
+  selectedProduct = signal<products>({} as products);
 
   filteredProducts = computed(() =>
     this.products().filter((product) =>
@@ -26,17 +26,19 @@ export class ProductService {
     return this.data;
   }
 
-  constructor(private http: HttpClient) {
+  constructor() {
     this.fetchProducts();
   }
 
   fetchProducts() {
-    console.log('fetch', this.data);
     this.products.set(this.data);
   }
 
+  selectProduct(product:products){
+    this.selectedProduct.set(product)
+  }
+
   search(query: string) {
-    console.log('query', query);
     this.searchQuery.set(query);
   }
 }
