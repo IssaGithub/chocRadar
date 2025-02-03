@@ -1,14 +1,41 @@
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+  .search-container {
+    flex: 2; /* Ensures input stays centered */
+    display: flex;
+    justify-content: left;
+   
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    background: transparent;
+    padding: 8px;
+    .search-input{
+      background-color: #fff;
+      box-shadow: 0 23px 28px #b4b3b3;
+      border-radius: 40px;
+      height: 40px;
+      width: 240px;
+      padding-left: 10px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    }
   }
-  
+
   .logo {
     font-size: 48px;
     font-weight: bold;
+    flex: 1; 
   }
   .logo img{
     height: 60px;
