@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { mockChock } from '../../data/mock';
 import { MatTableModule } from '@angular/material/table';
-import { prices } from '../../interfaces/prices';
 import { CommonModule } from '@angular/common';
 import { cheapestPrice } from '../../utility/product-helper';
-import { products } from '../../interfaces/products';
+import { ProductService } from '../../services/http/chocolate.service';
 @Component({
   selector: 'choc-details',
   standalone: true,
@@ -14,14 +12,15 @@ import { products } from '../../interfaces/products';
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent {
-  // product: chocolate = this.chocolateDataService.getChocolate();
-  product: products[] = [mockChock];
-  prices: prices[] = this.product[0].prices;
+  brand = this.dataService.selectedProduct().brand;
+  name = this.dataService.selectedProduct().name;
+ prices= this.dataService.selectedProduct().prices;
+ 
   productId?: string | null;
   displayedColumns: string[] = ['price', 'cheapest', 'amount', 'link'];
 
   cheapestPrice = cheapestPrice(this.prices);
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,private dataService:ProductService) {}
 
   ngOnnit() {
     this.route.queryParamMap.subscribe((paramMap) => {
