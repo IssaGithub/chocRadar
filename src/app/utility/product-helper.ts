@@ -31,5 +31,5 @@ export function transformProductData(chocolate: products[]) {
 }
 
 export function cheapestPrice(product: prices[]): number {
-  return Math.min(...product.map((price) => price.price));
+  return Math.min(...product.map((price) => price?.price));
 }
