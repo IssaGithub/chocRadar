@@ -3,12 +3,13 @@ import { computed, Injectable, signal } from '@angular/core';
 import * as chocolateData from '../../data/chocolate-data.json';
 import { products } from '../../interfaces/products';
 import { HttpClient } from '@angular/common/http';
+import { transformProductData } from '../../utility/product-helper';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private data = chocolateData.data;
+  private data = transformProductData(chocolateData.data);
 
   private products = signal<products[]>([]);
   private searchQuery = signal<string>('');
@@ -30,6 +31,7 @@ export class ProductService {
   }
 
   fetchProducts() {
+    console.log('fetch', this.data);
     this.products.set(this.data);
   }
 

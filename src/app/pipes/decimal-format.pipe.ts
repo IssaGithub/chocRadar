@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class DecimalFormatPipe implements PipeTransform {
-  transform(value: number | string, decimalPlaces: number): string {
+  transform(value: number | string | undefined, decimalPlaces: number): string {
     if (value === null || isNaN(Number(value))) {
-      return '';
+      return '0';
     }
 
     return Number(value).toFixed(decimalPlaces);

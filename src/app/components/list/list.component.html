@@ -15,12 +15,12 @@
         </div>
         <div class="price-container">
           <p>Durchschnittlicher Preis pro 100g</p>
-          <p class="price">{{ item.pricePer100g }} €</p>
+          <p>{{ item.pricePer100g | decimalFormat: 3 }} €</p>
         </div>
 
         <div class="price-container">
           <p>Günstigster Preis pro 100g</p>
-          <p class="price">{{ item.cheapestPricePer100g }}&ngsp; €</p>
+          <p>{{ item.cheapestPricePer100g }}&ngsp; €</p>
         </div>
         <div style="display: inline">
           <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{

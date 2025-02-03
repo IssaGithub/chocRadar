@@ -6,11 +6,12 @@ import { productsDataService } from '../../services/chocolate-data.service';
 import { transformProductData } from '../../utility/product-helper';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../../services/http/chocolate.service';
+import { DecimalFormatPipe } from '../../pipes/decimal-format.pipe';
 
 @Component({
   selector: 'choc-list',
   standalone: true,
-  imports: [RouterModule, CommonModule, HttpClientModule],
+  imports: [RouterModule, CommonModule, HttpClientModule, DecimalFormatPipe],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss',
 })
