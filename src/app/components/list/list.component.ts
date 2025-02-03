@@ -21,12 +21,11 @@ export class ListComponent implements OnInit {
 
   $products = this.dataService.filteredProducts;
   constructor(
-    private productService: productsDataService,
     private dataService: ProductService,
   ) {}
 
   selectItem(chocolate: products) {
-    this.productService.setChocoloate(chocolate);
+    this.dataService.selectProduct(chocolate)
   }
 
   ngOnInit(): void {
