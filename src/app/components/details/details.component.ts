@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { chocolate } from '../../interfaces/chocolate';
 import { ActivatedRoute } from '@angular/router';
-import { ChocolateDataService } from '../../services/chocolate-data.service';
 import { mockChock } from '../../data/mock';
 import { MatTableModule } from '@angular/material/table';
 import { prices } from '../../interfaces/prices';
 import { CommonModule } from '@angular/common';
-import { cheapestPrice } from '../../utility/chocolate-helper';
+import { cheapestPrice } from '../../utility/product-helper';
+import { products } from '../../interfaces/products';
 @Component({
   selector: 'choc-details',
   standalone: true,
@@ -16,17 +15,13 @@ import { cheapestPrice } from '../../utility/chocolate-helper';
 })
 export class DetailsComponent {
   // product: chocolate = this.chocolateDataService.getChocolate();
-  product: chocolate[] = [mockChock];
+  product: products[] = [mockChock];
   prices: prices[] = this.product[0].prices;
   productId?: string | null;
   displayedColumns: string[] = ['price', 'cheapest', 'amount', 'link'];
 
   cheapestPrice = cheapestPrice(this.prices);
-  constructor(
-    private route: ActivatedRoute,
-    private chocolateDataService: ChocolateDataService,
-  ) {
-    console.log('cheapestPrice', this.cheapestPrice);
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnnit() {
