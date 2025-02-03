@@ -21,8 +21,7 @@ export class DetailsComponent {
   displayedColumns: string[] = ['price', 'cheapest', 'amount', 'link'];
 
   cheapestPrice = cheapestPrice(this.prices);
-  constructor(private route: ActivatedRoute) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnnit() {
     this.route.queryParamMap.subscribe((paramMap) => {

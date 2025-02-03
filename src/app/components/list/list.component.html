@@ -1,5 +1,7 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <ul class="list">
-  <li *ngFor="let item of data">
+  <li *ngFor="let item of $products()">
     <section
       class="preview"
       (click)="selectItem(item)"
