@@ -1,7 +1,7 @@
 import { BaseItem } from './BaseItem';
 import { prices } from './prices';
 
-export interface chocolate extends BaseItem {
+export interface products extends BaseItem {
   brand: string;
   currency: string;
   prices: prices[];

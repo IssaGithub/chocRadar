@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { chocolate } from '../../interfaces/chocolate';
+import { products } from '../../interfaces/products';
 import { RouterModule } from '@angular/router';
-import { ChocolateDataService } from '../../services/chocolate-data.service';
-import { transformProductData } from '../../utility/chocolate-helper';
-import { ChocolateService } from '../../services/http/chocolate.service';
+import { productsDataService } from '../../services/chocolate-data.service';
+import { transformProductData } from '../../utility/product-helper';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from '../../services/http/chocolate.service';
 
 @Component({
   selector: 'choc-list',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, HttpClientModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss',
 })
 export class ListComponent implements OnInit {
-  data: chocolate[] = [];
+  data: products[] = [];
   colums = ['name', 'brand', 'cheapestPricePer100g', 'pricePer100g', 'link'];
+
+  $products = this.dataService.filteredProducts;
   constructor(
-    private chocolateService: ChocolateDataService,
-    private dataService: ChocolateService,
+    private productService: productsDataService,
+    private dataService: ProductService,
   ) {}
 
-  selectItem(chocolate: chocolate) {
-    this.chocolateService.setChocoloate(chocolate);
+  selectItem(chocolate: products) {
+    this.productService.setChocoloate(chocolate);
   }
 
   ngOnInit(): void {

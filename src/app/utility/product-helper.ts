@@ -1,7 +1,7 @@
-import { chocolate } from '../interfaces/chocolate';
+import { products } from '../interfaces/products';
 import { prices } from '../interfaces/prices';
 
-export function transformProductData(chocolate: chocolate[]) {
+export function transformProductData(chocolate: products[]) {
   return chocolate.map((chocolate) => {
     if (!chocolate.prices || chocolate.prices.length === 0) {
       return {

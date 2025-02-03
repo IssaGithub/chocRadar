@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { chocolate } from '../interfaces/chocolate';
+import { products } from '../interfaces/products';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ChocolateDataService {
-  private selectedChocolate: chocolate = {} as chocolate;
+export class productsDataService {
+  private selectedproducts: products = {} as products;
 
-  setChocoloate(chocolate: chocolate) {
-    this.selectedChocolate = chocolate;
+  setChocoloate(products: products) {
+    this.selectedproducts = products;
   }
 
-  getChocolate() {
-    return this.selectedChocolate;
+  getproducts() {
+    return this.selectedproducts;
   }
 }
