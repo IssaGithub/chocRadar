@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ProductService } from '../../services/http/chocolate.service';
 
 @Component({
   selector: 'choc-header',
@@ -12,17 +13,21 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   isMenuOpen = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private dataService: ProductService,
+  ) {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
   isSearchVisible(): boolean {
-    console.log('this.router', this.router.url);
     return this.router.url === '/';
   }
 
-  applyFilter(value: any) {
-    return value;
+  onSerach(event: Event) {
+    const query = (event.target as HTMLInputElement).value;
+    this.dataService.search(query);
+    this.dataService.fetchProducts();
   }
 }
