@@ -34,8 +34,8 @@ export class ProductService {
     this.products.set(this.data);
   }
 
-  selectProduct(product:products){
-    this.selectedProduct.set(product)
+  selectProduct(product: products) {
+    this.selectedProduct.set(product);
   }
 
   search(query: string) {

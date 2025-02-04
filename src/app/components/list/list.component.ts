@@ -20,12 +20,10 @@ export class ListComponent implements OnInit {
   colums = ['name', 'brand', 'cheapestPricePer100g', 'pricePer100g', 'link'];
 
   $products = this.dataService.filteredProducts;
-  constructor(
-    private dataService: ProductService,
-  ) {}
+  constructor(private dataService: ProductService) {}
 
   selectItem(chocolate: products) {
-    this.dataService.selectProduct(chocolate)
+    this.dataService.selectProduct(chocolate);
   }
 
   ngOnInit(): void {
