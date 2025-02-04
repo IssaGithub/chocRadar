@@ -1,6 +1,11 @@
 <div class="details-container">
   <section class="title">
-    <h1>{{ brand }} {{ name }}</h1>
+    <section class="title-container">
+      <h1>{{ brand }} {{ name }}</h1>
+      <i class="fas fa-edit"></i>
+      <fa-icon class="icon" [icon]="faEdit"></fa-icon>
+    </section>
+
     <div class="details-table">
       <table mat-table [dataSource]="prices" class="mat-elevation-z8">
         <ng-container matColumnDef="price">
