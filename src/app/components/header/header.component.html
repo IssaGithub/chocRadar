@@ -1,5 +1,7 @@
 <header class="header">
-  <div class="logo"><img src="/assets/chocRadar.JPG" alt="log" /></div>
+  <div class="logo" [routerLink]="['/']">
+    <img src="/assets/chocRadar.JPG" alt="log" />
+  </div>
   <div *ngIf="isSearchVisible()" class="search-container">
     <input
       class="search-input"
