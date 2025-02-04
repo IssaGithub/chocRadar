@@ -8,8 +8,26 @@
       justify-content:flex-start;
       align-items: center;
       width: 100%;
+      height: 30px;
+      padding: 3rem 0rem  5rem 0;
       .icon{
         padding-left: 1rem;
+      }
+    }
+    .form-field{
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 30px;
+      padding: 3rem 0rem  5rem 0;
+      .mat-mdc-raised-button{
+        background-color: #751171 !important;
+      }
+      mat-form-field.small {
+        --mat-form-field-container-height: 30px;
+        --mat-form-field-container-vertical-padding: 4px;
+        padding-right: 1rem;
       }
     }
    

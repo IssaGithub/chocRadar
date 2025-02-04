@@ -1,10 +1,28 @@
 <div class="details-container">
   <section class="title">
-    <section class="title-container">
-      <h1>{{ brand }} {{ name }}</h1>
-      <i class="fas fa-edit"></i>
-      <fa-icon class="icon" [icon]="faEdit"></fa-icon>
-    </section>
+    <ng-container *ngIf="!editMode; else edit">
+      <div class="title-container">
+        <h1 class="page-title">{{ brand }} {{ name }}</h1>
+        <fa-icon class="icon" [icon]="faEdit" (click)="editTitle()"></fa-icon>
+      </div>
+    </ng-container>
+    <ng-template #edit>
+      <div class="form-field">
+        <form [formGroup]="titleGroup" (ngSubmit)="submitForm()">
+          <mat-form-field class="small" appearance="outline">
+            <mat-label>Hersteller</mat-label>
+            <input matInput formControlName="brand" />
+          </mat-form-field>
+          <mat-form-field class="small" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">
+            speichern
+          </button>
+        </form>
+      </div>
+    </ng-template>
 
     <div class="details-table">
       <table mat-table [dataSource]="prices" class="mat-elevation-z8">
