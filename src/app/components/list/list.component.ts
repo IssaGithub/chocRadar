@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { products } from '../../interfaces/products';
 import { RouterModule } from '@angular/router';
-import { productsDataService } from '../../services/chocolate-data.service';
+import { productsDataService } from '../../services/product-data.service';
 import { transformProductData } from '../../utility/product-helper';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../../services/http/chocolate.service';
@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
   colums = ['name', 'brand', 'cheapestPricePer100g', 'pricePer100g', 'link'];
 
   $products = this.dataService.filteredProducts;
-  constructor(private dataService: ProductService) {}
+  constructor(private dataService: ProductService) { }
 
   selectItem(chocolate: products) {
     this.dataService.selectProduct(chocolate);
