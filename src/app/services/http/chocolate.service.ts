@@ -1,8 +1,8 @@
 import { computed, Injectable, signal } from '@angular/core';
 
-import * as chocolateData from '../../data/chocolate-data.json';
 import { products } from '../../interfaces/products';
 import { transformProductData } from '../../utility/product-helper';
+import { chocolateData } from '../../data/chocolate-data';
 
 @Injectable({
   providedIn: 'root',
