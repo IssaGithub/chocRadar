@@ -8,11 +8,12 @@ Welcome to ChocRadar – an exciting application that showcases chocolates from 
 
 ## Features
 
-- Diverse Selection: Discover chocolates from different brands and find your new favorites.
-- User-Friendly Interface: Enjoy an intuitive and engaging user interface that makes browsing the world of chocolates a delight.
-- Display the manufactures with current lowest, average price per 100g and a direct link to the shop.
-- Detail view with all markets prices 
-- Pie chart of all the nutritin values
+- ✅ Diverse Selection: Discover chocolates from different brands and find your new favorites.
+- ✅ User-Friendly Interface: Enjoy an intuitive and engaging user interface that makes browsing the world of chocolates a delight.
+- ✅ Display the manufactures with current lowest, average price per 100g and a direct link to the shop.
+- ✅ Detail view with all markets prices 
+- ❌ Pie chart of all the nutritin values (Not available in this version)
+
 
 ## Installation
 
