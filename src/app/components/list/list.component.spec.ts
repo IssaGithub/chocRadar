@@ -24,9 +24,8 @@ describe('ListComponent', () => {
     productServiceSpy = spyOn(productService, 'selectProduct')
   });
 
-  it('should navigate to the correct route when selectItem is called', () => {
+  it('make sure selectProduct is called', () => {
     component.selectItem(product)
     expect(productServiceSpy).toHaveBeenCalled();
-
   });
 });
