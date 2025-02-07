@@ -41,4 +41,18 @@ export class ProductService {
   search(query: string) {
     this.searchQuery.set(query);
   }
+
+  updateProduct(identifier: Partial<products>, updates: Partial<products>) {
+    this.products.update((currentProducts) =>
+      currentProducts.map((product) =>
+        this.matchesIdentifier(product, identifier)
+          ? { ...product, ...updates }
+          : product
+      )
+    );
+  }
+
+  private matchesIdentifier(product: products, identifier: Partial<products>): boolean {
+    return Object.entries(identifier).every(([key, value]) => (product as any)[key] === value);
+  }
 }

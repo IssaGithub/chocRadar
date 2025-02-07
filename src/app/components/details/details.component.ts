@@ -35,6 +35,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class DetailsComponent implements OnInit {
   brand = this.dataService.selectedProduct().brand;
   name = this.dataService.selectedProduct().name;
+  id = this.dataService.selectedProduct().id;
   prices = this.dataService.selectedProduct().prices;
 
   productId?: string | null;
@@ -47,7 +48,7 @@ export class DetailsComponent implements OnInit {
     name: new FormControl(this.name),
   });
   cheapestPrice = cheapestPrice(this.prices);
-  constructor(private dataService: ProductService) {}
+  constructor(private dataService: ProductService) { }
 
   editTitle() {
     this.editMode = true;
@@ -58,11 +59,17 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.titleGroup.get('brand')!.valueChanges.subscribe((value) => {
-      if (value) this.brand = value;
+      if (value) {
+        this.brand = value;
+        this.dataService.updateProduct({ id: this.id }, { brand: value })
+      }
     });
 
     this.titleGroup.get('name')!.valueChanges.subscribe((value) => {
-      if (value) this.name = value;
+      if (value) {
+        this.name = value;
+        this.dataService.updateProduct({ id: this.id }, { name: value })
+      }
     });
   }
 }
