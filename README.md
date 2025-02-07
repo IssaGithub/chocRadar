@@ -61,7 +61,3 @@ Contributions are welcome! If you have ideas for improving the application or fi
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
----
-
-I hope this description helps you! Let me know if you need any further adjustments or additional information.  Good luck with your project! 🍫
